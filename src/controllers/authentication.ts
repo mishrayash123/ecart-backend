@@ -28,7 +28,10 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     await user.save();
 
-    res.cookie('YashKumarMishra-auth', user.authentication.sessionToken, { domain: 'localhost', path: '/' });
+    res.cookie('YashKumarMishra-auth', user.authentication.sessionToken, {
+      expires: new Date (Date.now() + 25892000000),
+      httpOnly:true
+      });
 
     return res.status(200).json(user).end();
   } catch (error) {
