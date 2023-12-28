@@ -1,12 +1,12 @@
-import express from 'express';
+const express = require('express');
 
-import authentication from './authentication.js';
-import users from './users.js';
-import cart from './cart.js'
+const authentication = require('./authentication');
+const users = require('./users');
+const cart  = require('./cart');
 
 const router = express.Router();
 
-export default (): express.Router => {
+module.exports= (): any => {
   authentication(router);
   users(router);
   cart(router);

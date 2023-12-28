@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require('express');
 
-import { createCart ,getbyproductid,getcart,deleteCartById} from '../db/Cart.js';
+const { createCart ,getbyproductid,getcart,deleteCartById} = require('../db/Cart');
 
-export const addtocart = async (req: express.Request, res: express.Response) => {
+ const addtocart = async (req: any, res: any) => {
     try {
       const { productid, userid } = req.body;
   
@@ -27,7 +27,7 @@ export const addtocart = async (req: express.Request, res: express.Response) => 
     }
   }
 
-  export const getCart = async (req: express.Request, res: express.Response) => {
+   const getCart = async (req: any, res: any) => {
     try {
       const users :any = await getcart();
   
@@ -38,7 +38,7 @@ export const addtocart = async (req: express.Request, res: express.Response) => 
     }
   };
 
-  export const deleteCart = async (req: express.Request, res: express.Response) => {
+   const deleteCart = async (req: any, res: any) => {
     try {
       const { id } = req.params;
   
@@ -50,3 +50,5 @@ export const addtocart = async (req: express.Request, res: express.Response) => 
       return res.sendStatus(400);
     }
   }
+
+  module.exports={getCart,addtocart,deleteCart}

@@ -1,9 +1,9 @@
-import express from 'express';
+const express = require('express');
 
-import { getUserByEmail, createUser } from '../db/users.js';
-import { authentication, random } from '../helpers/index.js';
+const { getUserByEmail, createUser } =  require('../db/users');
+const { authentication, random } = require('../helpers/index');
 
-export const login = async (req: express.Request, res: express.Response) => {
+ const login = async (req: any, res: any) => {
   try {
     const { email, password } = req.body;
 
@@ -40,7 +40,7 @@ export const login = async (req: express.Request, res: express.Response) => {
   }
 };
 
-export const register = async (req: express.Request, res: express.Response) => {
+ const register = async (req: any, res: any) => {
   try {
     const { email, password, username } = req.body;
 
@@ -70,3 +70,5 @@ export const register = async (req: express.Request, res: express.Response) => {
     return res.sendStatus(400);
   }
 }
+
+module.exports={login,register}

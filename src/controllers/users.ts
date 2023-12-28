@@ -1,9 +1,9 @@
-import express from 'express';
+const express = require('express');
 
-import { deleteUserById, getUsers, getUserById } from '../db/users.js';
-import{UserModel} from "../db/users.js"
+const  { deleteUserById, getUsers, getUserById } = require('../db/users');
+const {UserModel} = require("../db/users")
 
-export const getAllUsers = async (req: express.Request, res: express.Response) => {
+ const getAllUsers = async (req: any, res: any) => {
   try {
     const users = await getUsers();
 
@@ -14,7 +14,7 @@ export const getAllUsers = async (req: express.Request, res: express.Response) =
   }
 };
 
-export const deleteUser = async (req: express.Request, res: express.Response) => {
+ const deleteUser = async (req: any, res: any) => {
   try {
     const { id } = req.params;
 
@@ -27,7 +27,7 @@ export const deleteUser = async (req: express.Request, res: express.Response) =>
   }
 }
 
-export const updateUser = async (req: express.Request, res: express.Response) => {
+ const updateUser = async (req: any, res: any) => {
   try {
     const { id } = req.params;
     const  data  = req.body;
@@ -45,3 +45,5 @@ export const updateUser = async (req: express.Request, res: express.Response) =>
     return res.sendStatus(400);
   }
 }
+
+module.exports={getAllUsers,updateUser,deleteUser}

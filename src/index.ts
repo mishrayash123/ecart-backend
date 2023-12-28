@@ -1,13 +1,13 @@
-import express from 'express';
-import http from 'http';
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import compression from 'compression';
-import cors from 'cors';
-import dotenv from 'dotenv';
+const express = require('express');
+const http = require('http');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const compression = require('compression');
+const cors = require('cors');
+const dotenv = require('dotenv');
 
-import router from './router';
-import mongoose from 'mongoose';
+const router = require('./router');
+const mongoose = require('mongoose');
 
 dotenv.config();
 
@@ -34,7 +34,7 @@ server.listen(8080, () => {
 mongoose.Promise = Promise;
 mongoose.connect(DB).then(() => {
   console.log('connected successfully');
-}).catch((err) => console.log('not connected'));
+}).catch((err:string) => console.log('not connected'));
 // mongoose.connection.on('error', (error: Error) => console.log(error));
 
 app.use('/', router());

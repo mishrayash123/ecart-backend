@@ -1,9 +1,9 @@
-import express from 'express';
-import { merge, get } from 'lodash';
+const express = require('express');
+const { merge, get } = require('lodash');
 
-import { getUserBySessionToken } from '../db/users.js'; 
+const { getUserBySessionToken } = require('../db/users'); 
 
-export const isAuthenticated = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+ const isAuthenticated = async (req:any, res: any, next: any) => {
   try {
     const sessionToken = req.cookies['YashKumarMishra-auth'];
 
@@ -26,7 +26,7 @@ export const isAuthenticated = async (req: express.Request, res: express.Respons
   }
 }
 
-export const isOwner = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+ const isOwner = async (req: any, res: any, next: any) => {
   try {
     const { id } = req.params;
     const currentUserId = get(req, 'identity._id') as string;
@@ -45,3 +45,5 @@ export const isOwner = async (req: express.Request, res: express.Response, next:
     return res.sendStatus(400);
   }
 }
+
+module.exports={isAuthenticated,isOwner}
