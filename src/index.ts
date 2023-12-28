@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 const server = http.createServer(app);
 
 server.listen(8080, () => {
-  console.log('Server running on 8080',DB);
+  console.log('Server running on 8080');
 });
 
 
