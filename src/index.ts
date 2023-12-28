@@ -4,9 +4,14 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
+import dotenv = require('dotenv');
 
 import router from './router';
 import mongoose from 'mongoose';
+
+dotenv.config();
+
+const DB = process.env.DATABASE;
 
 const app = express();
 
@@ -24,10 +29,10 @@ server.listen(8080, () => {
   console.log('Server running on 8080');
 });
 
-const MONGO_URL = "mongodb+srv://Yash123:Yash786@cluster0.yrprxjp.mongodb.net/"; 
+
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL).then(() => {
+mongoose.connect(DB).then(() => {
   console.log('connected successfully');
 }).catch((err) => console.log('not connected'));
 // mongoose.connection.on('error', (error: Error) => console.log(error));
