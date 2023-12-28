@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
-import dotenv = require('dotenv');
+import dotenv from 'dotenv';
 
 import router from './router';
 import mongoose from 'mongoose';

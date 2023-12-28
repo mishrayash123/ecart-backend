@@ -1,8 +1,8 @@
 import express from 'express';
 
-import authentication from './authentication';
-import users from './users';
-import cart from './cart'
+import authentication from './authentication.js';
+import users from './users.js';
+import cart from './cart.js'
 
 const router = express.Router();
 

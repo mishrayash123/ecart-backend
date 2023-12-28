@@ -1,7 +1,7 @@
 import express from 'express';
 
-import { deleteUserById, getUsers, getUserById } from '../db/users';
-import{UserModel} from "../db/users"
+import { deleteUserById, getUsers, getUserById } from '../db/users.js';
+import{UserModel} from "../db/users.js"
 
 export const getAllUsers = async (req: express.Request, res: express.Response) => {
   try {
