@@ -6,7 +6,8 @@ const compression = require('compression');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-const router = require('./router');
+
+const {router1} = require('./router/index');
 const mongoose = require('mongoose');
 
 dotenv.config();
@@ -37,4 +38,4 @@ mongoose.connect(DB).then(() => {
 }).catch(() => console.log('not connected'));
 // mongoose.connection.on('error', (error: Error) => console.log(error));
 
-app.use('/', router());
+app.use('/', router1());
