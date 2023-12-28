@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 const server = http.createServer(app);
 
 server.listen(8080, () => {
-  console.log('Server running on 8080');
+  console.log('Server running on 8080',DB);
 });
 
 
@@ -34,7 +34,7 @@ server.listen(8080, () => {
 mongoose.Promise = Promise;
 mongoose.connect(DB).then(() => {
   console.log('connected successfully');
-}).catch((err:string) => console.log('not connected'));
+}).catch((err:any) => console.log('not connected'));
 // mongoose.connection.on('error', (error: Error) => console.log(error));
 
 app.use('/', router());
