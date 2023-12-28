@@ -6,12 +6,9 @@ const cart  = require('./cart');
 
 const router = express.Router();
 
-const router1 = (): any => {
+module.exports = (): any => {
   authentication(router);
   users(router);
   cart(router);
   return router;
 };
-
-
-module.exports={router1}
