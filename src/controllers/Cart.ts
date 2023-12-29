@@ -2,7 +2,7 @@ const express = require('express');
 
 const { createCart ,getbyproductid,getcart,deleteCartById} = require('../db/Cart');
 
- const addtocart = async (req: any, res: any) => {
+ export const addtocart = async (req: any, res: any) => {
     try {
       const { productid, userid } = req.body;
   
@@ -27,7 +27,7 @@ const { createCart ,getbyproductid,getcart,deleteCartById} = require('../db/Cart
     }
   }
 
-   const getCart = async (req: any, res: any) => {
+   export const getCart = async (req: any, res: any) => {
     try {
       const users :any = await getcart();
   
@@ -38,7 +38,7 @@ const { createCart ,getbyproductid,getcart,deleteCartById} = require('../db/Cart
     }
   };
 
-   const deleteCart = async (req: any, res: any) => {
+   export const deleteCart = async (req: any, res: any) => {
     try {
       const { id } = req.params;
   
@@ -50,5 +50,3 @@ const { createCart ,getbyproductid,getcart,deleteCartById} = require('../db/Cart
       return res.sendStatus(400);
     }
   }
-
-  module.exports={getCart,addtocart,deleteCart}
