@@ -6,7 +6,7 @@ const compression = require('compression');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-const router = require('./router');
+const router = require('./router/index.ts');
 const mongoose = require('mongoose');
 
 dotenv.config();
