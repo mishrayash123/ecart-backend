@@ -1,17 +1,17 @@
-const express = require('express');
-const http = require('http');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const compression = require('compression');
-const cors = require('cors');
-const dotenv = require('dotenv');
+import express  from 'express';
+import http  from 'http';
+import bodyParser  from 'body-parser';
+import cookieParser  from 'cookie-parser';
+import compression  from 'compression';
+import cors  from 'cors';
+import dotenv  from 'dotenv';
 
-const router = require('./router/index.ts');
-const mongoose = require('mongoose');
+import router  from './router/index';
+import mongoose  from 'mongoose';
 
 dotenv.config();
 
-const DB = process.env.DATABASE;
+const DB = process.env.DATABASE
 
 const app = express();
 

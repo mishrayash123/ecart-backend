@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 
-const { addtocart,getCart,deleteCart } = require('../controllers/Cart');
+import { addtocart,getCart,deleteCart } from '../controllers/Cart';
 
-module.exports= (router: any) => {
+export default (router: any) => {
   router.post('/addtocart', addtocart);
   router.get('/getCart', getCart);
   router.delete('/deleteCart/:id', deleteCart);

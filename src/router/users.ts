@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 
-const { getAllUsers, deleteUser, updateUser } = require('../controllers/users');
-const { isAuthenticated, isOwner } = require('../middlewares/index');
+import { getAllUsers, deleteUser, updateUser } from '../controllers/users';
+import { isAuthenticated, isOwner } from '../middlewares/index';
 
-module.exports= (router: any) => {
+export default (router: any) => {
   router.get('/users', isAuthenticated, getAllUsers);
   router.delete('/users/:id', isAuthenticated, isOwner, deleteUser);
   router.patch('/users/:id', isAuthenticated, isOwner, updateUser);

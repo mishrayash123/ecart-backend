@@ -1,11 +1,10 @@
-const crypto = require('crypto');
+import crypto from 'crypto';
 
 const SECRET = 'YashKumarMishra-REST-API';
 
- const authentication = (salt: string, password: string): string => {
+export const authentication = (salt: string, password: string): string => {
   return crypto.createHmac('sha256', [salt, password].join('/')).update(SECRET).digest('hex');
 }
 
- const random = () => crypto.randomBytes(128).toString('base64');
+export const random = () => crypto.randomBytes(128).toString('base64');
 
- module.exports={authentication,random}

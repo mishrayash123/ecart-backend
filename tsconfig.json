@@ -1,14 +1,26 @@
+// {
+//   "compilerOptions": {
+//     "module": "NodeNext",
+//     "moduleResolution": "NodeNext",
+//     "baseUrl": "src",
+//     "outDir": "dist",
+//     "sourceMap": true,
+//     "noImplicitAny": true,
+//   },
+//   "include": [
+//     "src/**/*",
+//     "src/index.mjs"
+//   ],
+// }
+
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "baseUrl": "src",
-    "outDir": "dist",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
     "sourceMap": true,
-    "noImplicitAny": true,
+    "outDir": "dist"
   },
-  "include": [
-    "src/**/*",
-    "src/index.mjs"
-  ],
+  "lib": ["es2015"]
 }
