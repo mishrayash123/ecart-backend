@@ -3,7 +3,7 @@ const { merge, get } = require('lodash');
 
 const { getUserBySessionToken } = require('../db/users'); 
 
-export const isAuthenticated = async (req:any, res: any, next: any) => {
+ const isAuthenticated = async (req:any, res: any, next: any) => {
   try {
     const sessionToken = req.cookies['YashKumarMishra-auth'];
 
@@ -26,7 +26,7 @@ export const isAuthenticated = async (req:any, res: any, next: any) => {
   }
 }
 
-export const isOwner = async (req: any, res: any, next: any) => {
+ const isOwner = async (req: any, res: any, next: any) => {
   try {
     const { id } = req.params;
     const currentUserId = get(req, 'identity._id') as string;
@@ -46,3 +46,4 @@ export const isOwner = async (req: any, res: any, next: any) => {
   }
 }
 
+module.exports={isAuthenticated,isOwner}

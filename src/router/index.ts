@@ -6,7 +6,7 @@ const cart  = require('./cart');
 
 const router = express.Router();
 
-export default (): any => {
+module.exports = (): any => {
   authentication(router);
   users(router);
   cart(router);
